@@ -1,0 +1,20 @@
+shallow_clone: true
+version: '{build}'
+skip_tags: true
+environment:
+  matrix:
+    - ruby_version: '193'
+    - ruby_version: '22'
+    - ruby_version: 22-x64
+install:
+  - ps: Install-Product node 4
+  - npm install
+  - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
+  - gem update --system
+  - gem update bundler
+  - ruby --version
+  - gem --version
+  - bundler --version
+build: off
+test_script: npm run-script test-only
+cache: node_modules -> package.json

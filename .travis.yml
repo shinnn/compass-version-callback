@@ -1,0 +1,36 @@
+git:
+  depth: 1
+branches:
+  except: /^v\d/
+language: ruby
+rvm:
+  - ruby-head
+  - 2.2.2
+  - 1.9.3
+env:
+  matrix:
+    - NODE_VERSION="stable"
+    - NODE_VERSION="0"
+    - NODE_VERSION="0.10"
+install: 
+  - gem update bundler
+  - nvm install $NODE_VERSION
+  - nvm use $NODE_VERSION
+  - npm install -g npm
+  - npm install
+script: >-
+  if [[ `node --version` == v0.* ]];
+  then npm install babel@5 &&
+       node node_modules/.bin/babel test.js --out-file test.js &&
+       node test.js;
+  else npm run-script pretest &&
+       npm run-script coverage;
+  fi;
+after_script: >-
+  if [[ `node --version` != v0.* && $TRAVIS_RUBY_VERSION == 2.2.2 ]];
+  then npm install istanbul-coveralls@1 &&
+       node node_modules/.bin/istanbul-coveralls;
+  fi;
+cache: bundler
+notifications:
+  email: false

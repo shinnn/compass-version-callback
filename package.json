@@ -1,0 +1,47 @@
+{
+  "name": "compass-version-callback",
+  "version": "1.0.0",
+  "description": "Callback-style version of compass-version",
+  "repository": "shinnn/compass-version",
+  "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+  "scripts": {
+    "pretest": "eslint --config @shinnn/node-legacy index.js test.js",
+    "docker:pull": "docker pull node:onbuild",
+    "predocker:test": "npm run-script docker:pull && docker build --no-cache -t test-compass-version .",
+    "docker:test": "docker run --rm test-compass-version npm run-script coverage",
+    "test": "npm run-script docker:test",
+    "test-only": "node --strong_mode --harmony_destructuring --throw-deprecation --track-heap-objects test.js",
+    "coverage": "node --strong_mode --harmony_destructuring --throw-deprecation --track-heap-objects node_modules/.bin/istanbul cover --print=both test.js"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "compass",
+    "bundle",
+    "bin",
+    "binary",
+    "installed",
+    "version",
+    "find",
+    "callback",
+    "async",
+    "asynchronous",
+    "asynchronously"
+  ],
+  "dependencies": {
+    "concat-stream": "^1.5.0",
+    "cross-spawn-async": "^2.0.0",
+    "find-versions": "^1.1.3",
+    "one-time": "^0.0.4"
+  },
+  "devDependencies": {
+    "@shinnn/eslint-config-node-legacy": "^1.0.0",
+    "eslint": "^1.6.0",
+    "istanbul": "^0.3.22",
+    "pify": "^2.2.0",
+    "pinkie-promise": "^1.0.0",
+    "tape": "^4.2.1"
+  }
+}
