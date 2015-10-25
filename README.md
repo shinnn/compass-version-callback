@@ -4,8 +4,8 @@
 [![Build Status](https://travis-ci.org/shinnn/compass-version-callback.svg?branch=master)](https://travis-ci.org/shinnn/compass-version-callback)
 [![Build status](https://ci.appveyor.com/api/projects/status/jj1au1suxr2dvd94/branch/master?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/compass-version-callback/branch/master)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/compass-version-callback.svg)](https://coveralls.io/github/shinnn/compass-version-callback?branch=master)
-[![Dependency Status](https://img.shields.io/david/shinnn/compass-version-callback.svg?label=deps)](https://david-dm.org/shinnn/compass-version-callback)
-[![devDependency Status](https://img.shields.io/david/dev/shinnn/compass-version-callback.svg?label=devDeps)](https://david-dm.org/shinnn/compass-version-callback#info=devDependencies)
+[![Dependency Status](https://david-dm.org/shinnn/compass-version-callback.svg)](https://david-dm.org/shinnn/compass-version-callback)
+[![devDependency Status](https://david-dm.org/shinnn/compass-version-callback/dev-status.svg)](https://david-dm.org/shinnn/compass-version-callback#info=devDependencies)
 
 Callback-style version of [compass-version](https://github.com/shinnn/compass-version)
 
