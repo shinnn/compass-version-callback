@@ -1,8 +1,8 @@
 {
   "name": "compass-version-callback",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Callback-style version of compass-version",
-  "repository": "shinnn/compass-version",
+  "repository": "shinnn/compass-version-callback",
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
   "scripts": {
     "pretest": "eslint --config @shinnn/node-legacy index.js test.js",
