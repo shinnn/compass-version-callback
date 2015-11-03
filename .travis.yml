@@ -4,8 +4,7 @@ branches:
   except: /^v\d/
 language: ruby
 rvm:
-  # https://github.com/travis-ci/travis-ci/issues/5166
-  # ruby-head
+  - ruby-head
   - 2.2.2
   - 1.9.3
 env:
