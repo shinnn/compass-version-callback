@@ -10,8 +10,8 @@
     "predocker:test": "npm run-script docker:pull && docker build --no-cache -t test-compass-version .",
     "docker:test": "docker run --rm test-compass-version npm run-script coverage",
     "test": "npm run-script docker:test",
-    "test-only": "node --strong_mode --harmony_destructuring --throw-deprecation --track-heap-objects test.js",
-    "coverage": "node --strong_mode --harmony_destructuring --throw-deprecation --track-heap-objects node_modules/.bin/istanbul cover --print=both test.js"
+    "test-only": "node --strong_mode --throw-deprecation --track-heap-objects test.js",
+    "coverage": "node --strong_mode --throw-deprecation --track-heap-objects node_modules/.bin/istanbul cover --print=both test.js"
   },
   "license": "MIT",
   "files": [
