@@ -3,10 +3,7 @@ git:
 branches:
   except: /^v\d/
 language: ruby
-rvm:
-  - ruby-head
-  - 2.2.2
-  - 1.9.3
+rvm: 2.3.x
 env:
   matrix:
     - NODE_VERSION="node"
@@ -26,11 +23,9 @@ script: >-
   else npm run-script pretest &&
        npm run-script coverage;
   fi;
-after_script: >-
-  if [[ `node --version` != v0.* && $TRAVIS_RUBY_VERSION == 2.2.2 ]];
-  then npm install istanbul-coveralls@1 &&
-       node node_modules/.bin/istanbul-coveralls;
-  fi;
+after_script:
+  - npm install istanbul-coveralls
+  - node node_modules/.bin/istanbul-coveralls
 cache: bundler
 notifications:
   email: false
